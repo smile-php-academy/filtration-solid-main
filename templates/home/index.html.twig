@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('app_purchase') }}" method="post">
+        <p>Product : 5$</p>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            {% for name in gateways %}
+                <input type="radio" class="btn-check" name="gateway" id="{{ name }}" value="{{ name }}" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="{{ name }}">{{ name | humanize }}</label>
+            {% endfor %}
+        </div>
+        <br><br><br><br>
+        <div>
+            <button type="submit" class="btn btn-primary">Purchase</button>
+        </div>
+    </form>
+{% endblock %}

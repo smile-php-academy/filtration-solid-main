@@ -6,11 +6,15 @@
 parameters:
 
 services:
-    # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+    _instanceof:
+        App\Payment\Gateway\GatewayInterface:
+            tags: ['app.gateway']
+        App\Filter\Post\PostFilterInterface:
+            tags: [ 'app.post_filter' ]
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
@@ -23,3 +27,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+
+    App\Payment\PaymentManager:
+        arguments:
+            - !tagged_iterator { tag: 'app.gateway', default_index_method: 'alias' }
+
+    App\Filter\PostFilter:
+        arguments:
+            - !tagged_iterator { tag: 'app.post_filter', default_index_method: 'alias' }
