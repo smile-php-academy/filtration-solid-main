@@ -3,6 +3,15 @@
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/hipolabs-sdk",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": ">=7.2.5",
         "ext-ctype": "*",
@@ -42,7 +51,8 @@
         "symfony/web-link": "5.3.*",
         "symfony/yaml": "5.3.*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "yoeunes/hipolabs-sdk": "@dev"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",

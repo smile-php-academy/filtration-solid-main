@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a159dfe8c5a1a164ca574203117f070",
+    "content-hash": "b67e8ad3563b33ecbf62098861fa5925",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -7708,6 +7708,33 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "yoeunes/hipolabs-sdk",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/hipolabs-sdk",
+                "reference": "29f29350a25cd75841090f0c7a726a6a7fbcf42a"
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "symfony/http-client": "^5.3",
+                "symfony/string": "^5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HipoLabs\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         }
     ],
     "packages-dev": [
@@ -10143,7 +10170,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "yoeunes/hipolabs-sdk": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

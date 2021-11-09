@@ -1,0 +1,14 @@
+{
+    "name": "yoeunes/hipolabs-sdk",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4|^8.0",
+        "symfony/http-client": "^5.3",
+        "symfony/string": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "HipoLabs\\": "src/"
+        }
+    }
+}

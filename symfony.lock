@@ -609,5 +609,8 @@
     },
     "webmozart/assert": {
         "version": "1.10.0"
+    },
+    "yoeunes/hipolabs-sdk": {
+        "version": "dev-main"
     }
 }

@@ -39,3 +39,8 @@ services:
     App\Filter\PostFilter:
         arguments:
             - !tagged_iterator { tag: 'app.post_filter', default_index_method: 'alias' }
+
+    HipoLabs\HipoLabs: ~
+    HipoLabs\Http\SymfonyAdapter: ~
+    HipoLabs\Http\HttpInterface: '@HipoLabs\Http\SymfonyAdapter'
+
