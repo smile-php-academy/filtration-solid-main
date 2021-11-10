@@ -24,6 +24,8 @@ class PostFilter
     {
         $queryBuilder = $this->postRepository->createQueryBuilder('p');
 
+        $params['is_posted'] = true;
+
         foreach ($this->filters as $alias => $filter) {
             if (!isset($params[$alias])) {
                 continue;

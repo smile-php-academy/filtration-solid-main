@@ -11,9 +11,9 @@ final class UniversityApi extends Api
     /**
      * @return University[]
      */
-    public function get(string $country = null, string $name = null): array
+    public function index(string $country = null, string $name = null): array
     {
-        $response = $this->http->get(self::resource(), '/search', [
+        $response = $this->http->get($this->resource(), '/search', [
             'country' => $country,
             'name'    => $name,
         ]);
@@ -26,7 +26,7 @@ final class UniversityApi extends Api
      */
     public function fromMorocco(string $name = null): array
     {
-        return $this->get('morocco', $name);
+        return $this->index('morocco', $name);
     }
 
     protected function resource(): string

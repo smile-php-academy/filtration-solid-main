@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/post")
@@ -26,6 +27,16 @@ class PostController extends AbstractController
         return $this->render('post/index.html.twig', [
             'posts' => $posts,
         ]);
+    }
+
+    /**
+     * @Route("/search", name="post_search", methods={"GET"})
+     */
+    public function search(PostFilter $postFilter, Request $request)
+    {
+        $posts = $postFilter->filter($request->query->all());
+
+        return $this->json($posts);
     }
 
     /**

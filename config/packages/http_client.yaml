@@ -1,0 +1,7 @@
+framework:
+    http_client:
+        scoped_clients:
+            news.client:
+                base_uri: 'https://newsapi.org'
+                headers:
+                    Authorization: '%env(APP_NEWS_API_KEY)%'

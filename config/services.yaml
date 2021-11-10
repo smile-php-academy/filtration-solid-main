@@ -44,3 +44,10 @@ services:
     HipoLabs\Http\SymfonyAdapter: ~
     HipoLabs\Http\HttpInterface: '@HipoLabs\Http\SymfonyAdapter'
 
+
+#    App\News\Http\SymfonyAdapter:
+#        arguments: ['@news.client']
+
+    App\News\Config:
+        arguments:
+            $apiKey: '%env(APP_NEWS_API_KEY)%'
